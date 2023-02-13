@@ -1,18 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import App from 'App';
-import DataState from 'store/data/DataState';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import App from "App";
+import DataState from "store/data/DataState";
+import UiState from "store/ui/UiState";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <DataState>
-        <App />
-      </DataState>
+      <UiState>
+        <DataState>
+          <App />
+        </DataState>
+      </UiState>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,0 +1,9 @@
+.sidebar-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: xx-large;
+    font-weight: 600;
+}

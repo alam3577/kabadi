@@ -3,11 +3,13 @@ import './App.css';
 import Nav from 'components/layouts/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Routers from 'Routers';
+import SideBar from 'components/ui/SideBar';
 
 function App() {
   return (
     <div>
       <Nav />
+      <SideBar />
       <Routers />
     </div>
   );

@@ -37,9 +37,80 @@
     width: 20rem;
     margin: 0.5rem 0rem;
     font-size: large;
-    border: 0.5px solid black;
+    border: 1px solid black;
     padding: 6px;
     background: aliceblue;
     border-radius: 0.2rem;
     outline: none;
+}
+
+.btn-continue{
+    outline: none;
+    border: 0.1px solid black;
+    padding: 0.4rem 0rem;
+    border-radius: 0.2rem;
+    background: #00d9a6;
+    color: #fff;
+    font-size: large;
+    font-weight: 600;
+    border: 0px;
+}
+
+.selling-type{
+    width: 20rem;
+    padding: 5px;
+    margin: 0.3rem 0rem;
+}
+
+.selling-type-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 24.5rem;
+}
+
+.selling-type-btn button {
+    outline: none;
+    border: 0px;
+    padding: 5px;
+}
+.selling-type-left-btn {
+    width: 10%;
+}
+
+.selling-type-right-btn {
+    width: 71%;
+}
+
+.selling{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-address{
+    width: 100%;
+    padding-left: 10%;
+}
+
+.address{
+    border: 1px solid black;
+    width: 90%;
+}
+
+.address-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.date{
+    width: 100%;
+    border: 1px solid;
+    /* margin-bottom: 1rem; */
+    padding: 10px;
 }

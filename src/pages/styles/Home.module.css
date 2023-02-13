@@ -1,0 +1,29 @@
+.headline-container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    padding-right: 10px;
+    font-size: 33px;
+    line-height: 45px;
+}
+
+.heading-highlight{
+    color: #00d9a6;
+    font-size: 33px;
+    line-height: 45px;
+}
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

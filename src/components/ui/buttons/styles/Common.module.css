@@ -1,0 +1,19 @@
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0rem;
+}
+
+.btn{
+    outline: none;
+    border: 0px;
+    padding: 10px 26px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 1.2rem;
+    color: #fff;
+    box-shadow: 3px 6px 20px 0px #92d892;
+    cursor: pointer;
+    background: linear-gradient(270deg, #00d9a6, #92d892);
+}

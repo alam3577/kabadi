@@ -1,0 +1,26 @@
+.content-breaker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.content-breaker-one{
+    width: 1rem;
+    background: linear-gradient(45deg, #008000, #00d9a6);
+    height: 6px;
+    border: none;
+    border-radius: 1rem
+}
+
+.content-breaker-two{
+    width: 5rem;
+    background: linear-gradient(45deg, #008000, #00d9a6);
+    height: 6px;
+    border: none;
+    border-radius: 1rem;
+}
+
+.banner{
+    font-size: 1.5rem;
+}

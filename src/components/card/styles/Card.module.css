@@ -1,0 +1,44 @@
+.card-container{
+    background: white;
+    margin: 1rem;
+    border: 0px;
+    border-radius: 0.5rem;
+    padding: 2rem 0rem;
+    box-shadow: 1px 0px 20px #d3d3d3;
+}
+
+.card-content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0px 3rem;
+}
+
+.card-content .icon img{
+    height: 5rem;
+    filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
+    margin-bottom: 15px;
+}
+
+.heading{
+    margin: 10px 0px;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.btn{
+    margin: 1rem 0rem;
+    border: 1px solid #00d9a6;
+    padding: 10px 20px;
+    border-radius: 0.2rem;
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transition: calc(0.4s);
+    background-color: #00d9a6;
+    color: #fff;
+}

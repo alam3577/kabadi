@@ -1,0 +1,36 @@
+.container{
+  width: 100%;
+}
+
+.nav-container{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 3px;
+  background-color: #fff;
+  margin: auto;
+  height: 80px;
+}
+
+.menu-icon img {
+  height: 45px; 
+  filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
+}
+
+.logo-text{
+  font-size: 38px;
+  font-weight: 600;
+  color: #00d9a6;
+}
+
+.left-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.left-nav img{
+  height: 55px;
+}

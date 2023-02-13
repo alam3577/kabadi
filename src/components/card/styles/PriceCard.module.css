@@ -1,0 +1,22 @@
+.price-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img{
+    height: 10rem;
+    width: 12rem;
+    filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
+}
+
+.name{
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.price{
+    font-size: x-large;
+    font-weight: 600;
+}

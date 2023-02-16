@@ -1,7 +1,7 @@
 import classes from './styles/Common.module.css';
-function MainButton({ name }) {
+function MainButton({ name, btnClick }) {
   return (
-    <div className={classes['btn-container']}>
+    <div onClick={() => btnClick && btnClick()} className={classes['btn-container']}>
       <button className={classes.btn}>{name}</button>
     </div>
   );

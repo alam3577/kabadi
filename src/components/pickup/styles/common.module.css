@@ -151,7 +151,7 @@
 }
 
 .available-slots{
-    background-color: #00d9a6;
+    background-color: #00a9ef;
     padding: 10px;
     font-size: larger;
     /* width: 15rem; */
@@ -163,7 +163,11 @@
     justify-content: flex-start;
     align-items: center;
     gap: 14px;
-    width: 82%
+    width: 82%;
+}
+
+.available-slots-selected{
+    background-color: #00d9a6 !important;
 }
 
 .date-container{

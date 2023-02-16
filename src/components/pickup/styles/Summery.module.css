@@ -1,0 +1,36 @@
+.main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 1px;
+  }
+  
+  .booking-summary {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .booking-summary h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .booking-summary p {
+    margin: 10px 0;
+  }
+  
+  .booking-summary strong {
+    font-weight: bold;
+  }
+  

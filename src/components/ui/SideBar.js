@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { NavLink } from 'react-router-dom';
 import UIContext from 'store/ui/UiContext';
 import classes from "./styles/SideBar.module.css"
 
@@ -13,9 +14,16 @@ function SideBar() {
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className={classes['sidebar-items']}>
-           <div>Home</div>
-           <div>Price</div>
-           <div>Pick Up</div>
+        <NavLink style={{ textDecoration: 'none', color:"#00d9a6", cursor:"pointer" }} to="/">
+           <div onClick={() => handleClose()}>Home</div>
+        </NavLink>
+        <NavLink style={{ textDecoration: 'none', color:"#00d9a6", cursor:"pointer" }} to="/price">
+           <div onClick={() => handleClose()}>Price</div>
+        </NavLink>
+        <NavLink style={{ textDecoration: 'none', color:"#00d9a6", cursor:"pointer" }} to="/book-pickup">
+           <div onClick={() => handleClose()}>Pick Up</div>
+        </NavLink>
+           {/* <div>Order Summery</div> */}
         </Offcanvas.Body>
       </Offcanvas>
     </>

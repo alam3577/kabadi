@@ -11,6 +11,8 @@ import DateSelection from "components/pickup/DateSelection";
 import { useContext } from "react";
 import UIContext from "store/ui/UiContext";
 import Slots from "components/pickup/Slots";
+import Summery from "components/pickup/Summery";
+import Home from "./Home";
 
 function Pickup() {
   const { count } = useContext(UIContext);
@@ -29,8 +31,10 @@ function Pickup() {
         return <DateSelection />;
       case 5:
         return <Slots />;
+      case 6:
+        return <Summery />
       default:
-       return <Name />;
+       return <Home />;
     }
   }
 

@@ -1,5 +1,10 @@
 .container{
   width: 100%;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid #6dd997;
 }
 
 .nav-container{

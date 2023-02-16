@@ -1,12 +1,14 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import DataContext from 'store/data/DataContext';
 import CounterBtn from './CounterBtn';
 import classes from "./styles/common.module.css";
 
 function Slots() {
   const {selectedSlot, setSelectedSlot, dataDate, data} = useContext(DataContext);
+  const [slotId, setSlotId] = useState("")
 
-  const handleSlotClick = (slot) => {
+  const handleSlotClick = (slot, id) => {
+    setSlotId(id);
     setSelectedSlot(slot);
   }
 
@@ -19,7 +21,7 @@ function Slots() {
         {
             data?.map(slot => {
                 return (
-                    <div onClick={() => handleSlotClick(slot?.startSlot + " to " + slot?.endSlot)} key={slot?.id} className={classes['available-slots']} >{slot?.startSlot} to {slot?.endSlot}</div>
+                    <div onClick={() => handleSlotClick(`${slot?.startSlot} to ${slot?.endSlot}`, slot?.id)} key={slot?.id} className={`${classes['available-slots']} ${slotId === slot?.id && classes['available-slots-selected']}`} >{slot?.startSlot} to {slot?.endSlot}</div>
                 )
             })
         }

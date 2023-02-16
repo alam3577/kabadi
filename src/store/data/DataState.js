@@ -16,6 +16,7 @@ function DataState({ children }) {
   const [dataDate, setDataDate] = useState(new Date());
   const [selectedSlot, setSelectedSlot] = useState("");
   const [data, setData] = useState([]) 
+  const [phone, setPhone] = useState('');
 
   function getHours(d) {
     let h = parseInt(d.split(':')[0]);
@@ -47,7 +48,7 @@ function DataState({ children }) {
    }, [])
 
   return (
-    <DataContext.Provider value={{ data: priceList, name, setName, sellingType, setSellingType, location, setLocation, address, setAddress, dataDate, setDataDate, selectedSlot, setSelectedSlot, data }}>
+    <DataContext.Provider value={{ priceList, name, setName, sellingType, setSellingType, location, setLocation, address, setAddress, dataDate, setDataDate, selectedSlot, setSelectedSlot, data, phone, setPhone }}>
       {children}
     </DataContext.Provider>
   );

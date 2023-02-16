@@ -1,0 +1,35 @@
+<input type="text" id="txtStartTime" value="5:00 PM" />
+<input type="text" id="txtEndTime" value="01:23 AM" />
+<input type="button" id="btnCompare" value="Compare" onclick="Compare()" />
+<script type="text/javascript">
+    function Compare() {
+        var strStartTime = document.getElementById("txtStartTime").value;
+        var strEndTime = document.getElementById("txtEndTime").value;
+ 
+        var startTime = new Date().setHours(GetHours(strStartTime), GetMinutes(strStartTime), 0);
+        var endTime = new Date(startTime)
+        console.log({strStartTime, strEndTime, startTime, endTime});
+        endTime = endTime.setHours(GetHours(strEndTime), GetMinutes(strEndTime), 0);
+        if (startTime > endTime) {
+            alert("Start Time is greater than end time");
+        }
+        if (startTime == endTime) {
+            alert("Start Time equals end time");
+        }
+        if (startTime <endTime) {
+            alert("Start Time is less than end time");
+        }
+    }
+    function GetHours(d) {
+        console.log({d});
+        var h =parseInt(d.split(':')[0]);
+        console.log({h});
+        if (d.split(':')[1].split(' ')[1] == "PM") {
+            h = h + 12;
+        }
+        return h;
+    }
+    function GetMinutes(d) {
+        return parseInt(d.split(':')[1].split(' ')[0]);
+    }
+</script>

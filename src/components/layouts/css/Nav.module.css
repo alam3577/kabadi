@@ -15,17 +15,17 @@
   padding: 0px 3px;
   background-color: #fff;
   margin: auto;
-  height: 80px;
+  height: 55px;
 }
 
 .menu-icon img {
   cursor: pointer;
-  height: 45px; 
+  height: 35px; 
   filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
 }
 
 .logo-text{
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 600;
   color: #00d9a6;
 }
@@ -38,5 +38,5 @@
 }
 
 .left-nav img{
-  height: 55px;
+  height: 40px;
 }

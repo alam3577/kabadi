@@ -6,8 +6,8 @@
 }
 
 .image img{
-    height: 10rem;
-    width: 12rem;
+    height: 8rem;
+    width: 10rem;
     filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
 }
 

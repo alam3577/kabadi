@@ -8,8 +8,8 @@
 }
 
 .booking-image{
-    height: 11rem;
-    width: 14rem;
+    height: 9rem;
+    width: 11rem;
     filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
 }
 
@@ -18,7 +18,7 @@
 }
 
 .banner{
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-bottom: -0.1rem;
     font-weight: 600;
 }

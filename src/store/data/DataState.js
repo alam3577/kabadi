@@ -15,8 +15,8 @@ function DataState({ children }) {
   const [address, setAddress] = useState('');
   const [dataDate, setDataDate] = useState(new Date());
   const [selectedSlot, setSelectedSlot] = useState("");
-  const [data, setData] = useState([]) 
   const [phone, setPhone] = useState('');
+  const [data, setData] = useState([]) 
 
   function getHours(d) {
     let h = parseInt(d.split(':')[0]);

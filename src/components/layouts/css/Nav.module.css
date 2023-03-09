@@ -1,4 +1,4 @@
-.container{
+.container {
   width: 100%;
   position: fixed;
   background-color: #fff;
@@ -7,7 +7,7 @@
   border-bottom: 1px solid #6dd997;
 }
 
-.nav-container{
+.nav-container {
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -20,23 +20,43 @@
 
 .menu-icon img {
   cursor: pointer;
-  height: 35px; 
-  filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
+  height: 35px;
+  filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg)
+    brightness(58%) contrast(417%);
 }
 
-.logo-text{
+.logo-text {
   font-size: 30px;
   font-weight: 600;
   color: #00d9a6;
 }
 
-.left-nav{
+.left-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.left-nav img{
+.left-nav img {
   height: 40px;
+}
+
+.right-nav-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  font-size: larger;
+  font-weight: 600;
+  padding-top: 13px;
+  color: #00d9a6;
+  cursor: pointer;
+}
+
+.right-nav-item-list {
+  text-decoration: none;
+  color: #00d9a6;
 }

@@ -1,21 +1,33 @@
-import './App.css';
+import "./App.css";
 // import Routers from 'Routers';
-import Nav from 'components/layouts/Nav';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Routers from 'Routers';
-import SideBar from 'components/ui/SideBar';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Contact from 'components/layouts/Contact';
-import Footer from 'components/layouts/Footer';
+import Nav from "components/layouts/Nav";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Routers from "Routers";
+import SideBar from "components/ui/SideBar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Contact from "components/layouts/Contact";
+import Footer from "components/layouts/Footer";
+import { useState } from "react";
+import AdminNav from "components/layouts/AdminNav";
 
 function App() {
+  const [isAdmin, setIsAdmin] = useState(true);
   return (
     <div>
-      <Nav />
-      <SideBar />
+      {!isAdmin && (
+        <>
+          <Nav />
+          <SideBar />
+          <Contact />
+        </>
+      )}
+      {isAdmin && (
+        <>
+          <AdminNav />
+        </>
+      )}
       <Routers />
-      <Contact />
       <Footer />
       <ToastContainer
         position="top-center"

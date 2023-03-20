@@ -1,0 +1,35 @@
+.dashboard{
+    margin-top: 5rem;
+}
+
+.card-image{
+    height: 200px;
+}
+
+.addProduct{
+    margin-top: 7rem;
+}
+
+.selected-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.selected-img img{
+   height: 70px;
+}
+
+.img-badge{
+    cursor: pointer;
+}
+
+.price-container{
+    margin: 2rem 7rem 5rem 5.1rem;;
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}

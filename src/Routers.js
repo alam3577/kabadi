@@ -1,35 +1,37 @@
-import AddProduct from "pages/admin/AddProduct";
-import Dashboard from "pages/admin/Dashboard";
-import Locations from "pages/admin/Locations";
-import Orders from "pages/admin/Orders";
+import AddProduct from "pages/admin/products/AddProduct";
+import Dashboard from "pages/admin/products/Dashboard";
+import Locations from "pages/admin/locations/Locations";
+import Orders from "pages/admin/orders/Orders";
+import UpdateProduct from "pages/admin/products/UpdateProduct";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Pickup from "pages/Pickup";
 import Price from "pages/Price";
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import NotFound from "pages/NotFound";
+import { isAuthenticated } from "utils/helper";
 
 function Routers() {
-  const [isAdmin, setIsAdmin] = useState(true);
+  console.log({ check: isAuthenticated() })
   return (
     <div>
       <Routes>
-        {!isAdmin && (
-          <>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/price" element={<Price />} />
-            <Route path="/book-pickup" element={<Pickup />} />
-          </>
-        )}
-        {isAdmin && (
+        {/* <Route path='*' element={<NotFound />} /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/price" element={<Price />} />
+        <Route path="/book-pickup" element={<Pickup />} />
+        { isAuthenticated() && (
           <>
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/orders" element={<Orders />} />
             <Route path="/admin/locations" element={<Locations />} />
             <Route path="/admin/add-product" element={<AddProduct />} />
+            <Route path="/admin/update-product" element={<UpdateProduct />} />
           </>
         )}
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
     </div>
   );

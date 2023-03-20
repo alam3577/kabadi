@@ -4,14 +4,14 @@ import { useContext } from 'react';
 import DataContext from 'store/data/DataContext';
 
 function Price() {
-  const { priceList } = useContext(DataContext);
+  const { productData } = useContext(DataContext);
   // eslint-disable-next-line no-console
-  console.log({ priceList });
+  console.log({ productData });
   return (
     <div className={classes['price-container']}>
-      {priceList?.map((elem) => {
-        const { _id, name, price, image } = elem || {};
-        return <PriceCard key={_id} name={name} price={price} image={image} />;
+      {productData?.map((elem) => {
+        const { _id, name, price, photo } = elem || {};
+        return <PriceCard key={_id} name={name} price={price} image={photo} />;
       })}
     </div>
   );

@@ -9,7 +9,7 @@ function Card({ icon, heading, text, btnName }) {
         </div>
         <div className={classes.heading}>{heading}</div>
         <div className={classes.text}>{text}</div>
-        <div className={classes.btn}>{btnName}</div>
+        <div className={classes.btn}><a style={{ textDecoration: 'none', color: '#000000' }} href="tel:9876543212">{btnName}</a> </div>
       </div>
     </div>
   );

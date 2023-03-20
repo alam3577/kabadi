@@ -11,17 +11,16 @@ function Home() {
     <div className={classes['home-container']}>
       <div className={classes['headline-container']}>
         <h2>
-          <span className={classes['heading']}>Sell Your</span>
+          <span className={classes['heading']}>Clean your space, Earn some</span> <br/>
         </h2>
         <h2>
-          <span className={classes['heading']}>Scrape</span>
-          <span className={classes['heading-highlight']}>Online</span>
+          <span className={`${classes['heading-highlight']}`}>Cash</span>
         </h2>
         <h2>
-          <span className={classes['heading']}>one window solution</span>
+          <span className={classes['heading']}>call your local </span>
         </h2>
         <h2>
-          <span className={classes['heading-highlight']}>Scrapzon</span>
+          <span className={classes['heading-highlight']}>kabadiwallaa today!</span>
         </h2>
       </div>
       <Breaker />

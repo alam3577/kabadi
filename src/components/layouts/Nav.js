@@ -13,7 +13,7 @@ export const Nav = () => {
         <NavLink style={{ textDecoration: 'none' }} to="/">
           <img src={TrashIcon} alt="" srcSet="" />
         </NavLink>
-        <span className={classes['logo-text']}>Scrapzon</span>
+        <span className={classes['logo-text']}>Kabadiwallaa</span>
       </div>
       <div className={classes['menu-icon']} onClick={() => handleShow()}>
         <img src={MenuIcon} alt="" srcSet="" />

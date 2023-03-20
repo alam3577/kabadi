@@ -5,7 +5,8 @@ import classes from "./styles/common.module.css";
 
 function Slots() {
   const {selectedSlot, setSelectedSlot, dataDate, data} = useContext(DataContext);
-  const [slotId, setSlotId] = useState("")
+  const [slotId, setSlotId] = useState("");
+  const pickUpDate = String(dataDate).split(' ').slice(0, 4).join(' ');
 
   const handleSlotClick = (slot, id) => {
     setSlotId(id);
@@ -14,7 +15,7 @@ function Slots() {
 
   return (
     <section>
-      <p className={classes["intro-text"]}> Pleased Select a Slot On<br /> <strong>{String(dataDate)}</strong>  </p>
+      <p className={classes["intro-text"]}> Pleased Select a Slot On<br /> <strong>{pickUpDate}</strong>  </p>
       <p className={classes["intro-text"]}> Available Slots</p>
       <div className={classes['slot-container']}>
         <>

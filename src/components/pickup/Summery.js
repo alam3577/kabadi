@@ -1,24 +1,18 @@
 import MainButton from "components/ui/buttons/MainButton";
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import DataContext from "store/data/DataContext";
+import UIContext from "store/ui/UiContext";
 import classes from "./styles/Summery.module.css";
+import LeftArrowIcon from "../../assets/icons/left-arrow.png";
 
 function Summery() {
-  const { name, phone, dataDate, selectedSlot, address } =
+  const { name, phone, dataDate, selectedSlot, address, handleConfirmBookingClick } =
     useContext(DataContext);
-  
-  const navigate = useNavigate();
 
-  const handleConfirmBookingClick = () => {
-     console.log("COnfirm Booking is Clicked");
-     toast.success("your booking is confirmed");
-     setTimeout(()=>{
-       navigate("/");
-     }, 3000)
-  };
+  const pickUpDate = String(dataDate).split(' ').slice(0, 4).join(' ');
 
+  const {decCount} = useContext(UIContext);
+   
   return (
     <div className={classes["main-container"]}>
       <div class={classes.container}>
@@ -32,7 +26,7 @@ function Summery() {
             <strong>Phone:</strong> {phone}
           </p>
           <p>
-            <strong>Pick-up Date:</strong> {String(dataDate)}
+            <strong>Pick-up Date:</strong> {pickUpDate}
           </p>
           <p>
             <strong>Pick-up Time:</strong> {selectedSlot}
@@ -41,7 +35,12 @@ function Summery() {
             <strong>Pick-up Location:</strong> {address}
           </p>
         </div>
+        <div className={`d-flex justify-content-center align-items-center`}>
+        <button onClick={() => decCount()} className={classes["selling-type-left-btn"]}>
+          <img className={classes["left-icon"]} src={LeftArrowIcon} alt="LeftArrowIcon" srcSet=""/>
+        </button>
         <MainButton btnClick={handleConfirmBookingClick} name="Confirm Booking" />
+        </div>
       </div>
     </div>
   );

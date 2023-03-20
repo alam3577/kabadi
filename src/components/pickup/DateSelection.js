@@ -11,9 +11,9 @@ function DateSelection() {
       <p className={classes["intro-text"]}>Please Select Date To Collect Your Scrap </p>
       <div className={`${classes['date-container']} form-group`}>
          <h6>Please Select Pickup Date</h6>
-         <DatePicker dateFormat="dd-MM-yyyy" selected={dataDate} onChange={(date) => setDataDate(date)} />
+         <DatePicker placeholderText={'Please select a date'}  minDate={new Date()} dateFormat="dd-MM-yyyy" selected={dataDate} onChange={(date) => setDataDate(date)} />
       </div>
-      <CounterBtn check={true}/>
+      <CounterBtn check={dataDate} errMessage="Please Select a Date"/>
     </section>
   )
 }

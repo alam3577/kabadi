@@ -33,4 +33,23 @@
   .booking-summary strong {
     font-weight: bold;
   }
+
+  .selling-type-left-btn{
+    height: 49px;
+    margin-right: 15px;
+    outline: none;
+    border: 0px;
+    padding: 10px 26px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 1.2rem;
+    color: #fff;
+    box-shadow: 3px 6px 20px 0px #92d892;
+    cursor: pointer;
+    background: linear-gradient(270deg, #00d9a6, #92d892);
+  }
   
+  .selling-type-left-btn img{
+     height: 20px;
+     filter: invert(74%) sepia(13%) saturate(3006%) hue-rotate(553deg) brightness(145%) contrast(417%)
+  }

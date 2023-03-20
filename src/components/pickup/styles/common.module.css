@@ -37,11 +37,11 @@
     width: 20rem;
     margin: 0.5rem 0rem;
     font-size: large;
-    border: 1px solid black;
     padding: 6px;
     background: aliceblue;
     border-radius: 0.2rem;
     outline: none;
+    border: 0.1px solid gainsboro;
 }
 
 .btn-continue{
@@ -49,11 +49,12 @@
     border: 0.1px solid black;
     padding: 0.4rem 0rem;
     border-radius: 0.2rem;
-    background: #00d9a6;
     color: #fff;
     font-size: large;
     font-weight: 600;
     border: 0px;
+    box-shadow: 3px 6px 20px 0px #92d892;
+    background: linear-gradient(270deg, #00d9a6, #92d892);
 }
 
 .selling-type{
@@ -154,7 +155,7 @@
     background-color: #00a9ef;
     padding: 10px;
     font-size: larger;
-    /* width: 15rem; */
+    width: 20rem;
     border: 0px;
     border-radius: 0.3rem;
     color: #fff;
@@ -163,7 +164,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 14px;
-    width: 82%;
+    cursor: pointer;
 }
 
 .available-slots-selected{

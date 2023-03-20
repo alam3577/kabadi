@@ -1,0 +1,17 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: fixed;
+    top: 35%;
+    right: 2%;
+}
+
+.contact-container img {
+    width: 45px;
+    height: 45px;
+}
+
+.contact-container--call-icon{
+    filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
+}

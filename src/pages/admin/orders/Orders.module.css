@@ -63,3 +63,8 @@
        height: 20px;
        filter: invert(74%) sepia(13%) saturate(3006%) hue-rotate(553deg) brightness(145%) contrast(417%)
     }
+
+    .no-order-container {
+      font-size: larger;
+      font-weight: 600;
+    }

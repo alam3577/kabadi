@@ -6,7 +6,8 @@ import classes from "./styles/common.module.css";
 
 function Name() {
   const {incCount} = useContext(UIContext);
-  const {setName, name, phone, setPhone} = useContext(DataContext);
+  const {orderDetails, setOrderDetails} = useContext(DataContext);
+  const {name, phone} = orderDetails;
 
   function validateMobileNumber(number) {
     const regex = /^(?:(?:\+|0{0,2})91(\s*[-]\s*)?|[0]?)?[6789]\d{9}$/;
@@ -21,13 +22,19 @@ function Name() {
     checkNameLength && checkPhone && incCount();
   }
 
+  const handleOnChange = name => e => {
+     setOrderDetails(prevState => {
+      return {...prevState, [name]: e.target.value}
+     })
+  }
+
   return (
     <section className={classes["name-section"]}>
       <p className={classes["intro-text"]}>
         Hi, Im Booking Assit <br /> Welcome to Scrapzon
       </p>
-      <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="What Is Your Name" />
-      <input value={phone} onChange={(e) => setPhone(e.target.value.trim())} type="text" placeholder="Enter your Phone Number" />
+      <input value={name} onChange={handleOnChange("name")} type="text" placeholder="What Is Your Name" />
+      <input value={phone} onChange={handleOnChange("phone")} type="text" placeholder="Enter your Phone Number" />
       <button onClick={() => handleNameContinueClick()} className={classes["btn-continue"]}>Continue</button>
     </section>
   );

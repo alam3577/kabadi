@@ -10,7 +10,6 @@ import Address from "components/pickup/Address";
 import DateSelection from "components/pickup/DateSelection";
 import { useContext } from "react";
 import UIContext from "store/ui/UiContext";
-import Slots from "components/pickup/Slots";
 import Summery from "components/pickup/Summery";
 import Home from "./Home";
 
@@ -30,8 +29,6 @@ function Pickup() {
       case 4:
         return <DateSelection />;
       case 5:
-        return <Slots />;
-      case 6:
         return <Summery />
       default:
        return <Home />;
@@ -42,16 +39,20 @@ function Pickup() {
     <div className={classes["pickup-container"]}>
       <h3 className={classes.banner}>Book Your Pickup</h3>
       <h3 className={classes.banner}>Today</h3>
-      <Breaker />
-      <Banner name="Now Available in Hyderabad" />
-      <div>
-        <img
-          className={classes["booking-image"]}
-          src={BookingImage}
-          alt=""
-          srcSet=""
-        />
-      </div>
+      {count !== 4 && (
+        <>
+        <Breaker />
+        <Banner name="Now Available in Hyderabad" />
+        <div>
+          <img
+            className={classes["booking-image"]}
+            src={BookingImage}
+            alt=""
+            srcSet=""
+          />
+        </div>
+        </>
+      )}
       {getActiveComponent(count)}
     </div>
   );

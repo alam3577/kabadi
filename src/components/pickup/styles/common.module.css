@@ -180,3 +180,19 @@
     font-size: larger;
     width: 92%;
 }
+
+.slot-not-available {
+    background-color: aliceblue !important;
+    color: aquamarine;
+    padding: 10px;
+    font-size: larger;
+    width: 20rem;
+    border: 0px;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}

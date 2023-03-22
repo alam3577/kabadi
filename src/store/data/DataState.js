@@ -1,5 +1,5 @@
 import DataContext from './DataContext';
-import { availableSlots, priceList } from 'utils/data';
+import { priceList } from 'utils/data';
 import { useContext, useEffect, useState } from 'react';
 import ProductServices from 'services/product.services';
 import { toast } from 'react-toastify';
@@ -7,31 +7,34 @@ import UIContext from 'store/ui/UiContext';
 import { useNavigate } from 'react-router-dom';
 import LocationServices from 'services/location.services';
 import OrderServices from 'services/order.services';
+import SlotServices from 'services/slot.services';
 
-const date = new Date().toISOString()?.split('T')[0]?.split("-").reverse().join("/");
-const time = String(new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'})).split(' ')[1]?.split(':')
-
-const exactTime = time[0]
-const meridian = time[2]?.split("")?.slice(-2)?.join("");
 const productServices = new ProductServices();
 const locationServices = new LocationServices();
 const orderServices = new OrderServices();
+const slotServices = new SlotServices();
 
 function DataState({ children }) {
-  const [name, setName] = useState('');
-  const [sellingType, setSellingType] = useState('');
-  const [location, setLocation] = useState('');
-  const [address, setAddress] = useState('');
-  const [dataDate, setDataDate] = useState(null);
-  const [selectedSlot, setSelectedSlot] = useState("");
-  const [phone, setPhone] = useState('');
-  const [data, setData] = useState([]);
+  const [orderDetails, setOrderDetails] = useState({
+    name: "test",
+    phone: "7002729745",
+    sellingType: "sell",
+    location: "Amerpet",
+    address: "old custum busti begumpet",
+    dataDate: "",
+    selectedSlot: "",
+    selectedSlotId: "",
+  });
   const [productData, setProductData] = useState([]);
   const [singleProductData, setSingleProductData] = useState({});
+  const [singleSlotData, setSingleSlotData] = useState({});
   const [allAvailableLocations, setAllAvailableLocation] = useState([]);
+  const [allAvailableSlots, setAllAvailableSlots] = useState([]);
   const [allOrders, setAllOrders] = useState([]);
   const {setSpinner, setCount} = useContext(UIContext);
   const navigate = useNavigate();
+  
+  const { name, phone, sellingType, location, address, dataDate, selectedSlot, selectedSlotId } = orderDetails;
 
   const getProductData = async () => {
     try { 
@@ -59,40 +62,26 @@ function DataState({ children }) {
     }
   }
 
+  const getAllSlots = async () => {
+    try {
+      setSpinner(true);
+      const slots = await slotServices.getSlots();
+      if (slots?.status === 'success') {
+        setAllAvailableSlots(slots?.data?.slots)
+      }
+      setSpinner(false);
+     } catch (error) {
+      toast.error(error?.response?.data?.message);
+      setSpinner(false);
+     }
+  }
+
   useEffect(() => {
     getProductData()
     getAllLocations();
     getAllOrders();
+    getAllSlots();
   }, []);
-
-  function getHours(d) {
-    let h = parseInt(d.split(':')[0]);
-    if (d.split(':')[1].split(' ')[1] === "PM") {
-        h = h + 12;
-    }
-    return h;
-  }
-
-   useEffect(() => {
-    const getAvailableSlots =[...availableSlots]?.filter(slot => {
-      let startTime =  new Date().setHours(getHours(`${exactTime}:00 ${meridian}`), 0, 0);
-      let endTime = new Date(startTime)
-      endTime = endTime.setHours(getHours(slot?.startSlot), 0, 0);
-      if(startTime < endTime){
-        return slot;
-      }
-    });
-
-    setData(getAvailableSlots)
-
-    if (!getAvailableSlots.length) {
-      let day = new Date();
-      let setDay = day.setDate(day.getDate() + 1);
-      setDay = new Date(setDay)
-      setDataDate(setDay);
-      setData([...availableSlots]);
-     }
-   }, [])
 
    const handleEditProductClick = async (id) => {
      console.log({id});
@@ -111,9 +100,12 @@ function DataState({ children }) {
     const newOrder = {
       name,
       phone,
+      sellingType,
+      location,
       date: dataDate,
       time: selectedSlot,
-      address
+      address,
+      selectedSlot: selectedSlotId,
     }
     try {  
       setSpinner(true);
@@ -125,11 +117,16 @@ function DataState({ children }) {
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }finally{
-      setName("");
-      setPhone('');
-      setDataDate(null);
-      setSelectedSlot('');
-      setAddress('');
+      setOrderDetails({
+        name: "",
+        phone: "",
+        sellingType: "",
+        location: "",
+        address: "",
+        dataDate: "",
+        selectedSlot: "",
+        selectedSlotId: "",
+      })
       setSpinner(false);
       setCount(0);
     }
@@ -151,7 +148,7 @@ function DataState({ children }) {
   }
 
   return (
-    <DataContext.Provider value={{ priceList, name, setName, sellingType, setSellingType, location, setLocation, address, setAddress, dataDate, setDataDate, selectedSlot, setSelectedSlot, data, phone, setPhone, productData, getProductData, handleEditProductClick, singleProductData, allAvailableLocations, getAllLocations, setAllAvailableLocation, handleConfirmBookingClick, getAllOrders, allOrders }}>
+    <DataContext.Provider value={{ orderDetails, setOrderDetails, priceList, productData, getProductData, handleEditProductClick, singleProductData, allAvailableLocations, getAllLocations, setAllAvailableLocation, handleConfirmBookingClick, getAllOrders, allOrders, getAllSlots, allAvailableSlots, setAllAvailableSlots, singleSlotData, setSingleSlotData, }}>
       {children}
     </DataContext.Provider>
   );

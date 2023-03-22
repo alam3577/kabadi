@@ -10,6 +10,9 @@ import Price from "pages/Price";
 import { Navigate, Route, Routes } from "react-router-dom";
 import NotFound from "pages/NotFound";
 import { isAuthenticated } from "utils/helper";
+import AdminSlot from "pages/admin/slots/AddSlot";
+import Slots from "pages/admin/slots/Slots";
+import UpdateSlot from "pages/admin/slots/UpdateSlot";
 
 function Routers() {
   console.log({ check: isAuthenticated() })
@@ -28,6 +31,9 @@ function Routers() {
             <Route path="/admin/locations" element={<Locations />} />
             <Route path="/admin/add-product" element={<AddProduct />} />
             <Route path="/admin/update-product" element={<UpdateProduct />} />
+            <Route path="/admin/slot" element={<Slots />} />
+            <Route path="/admin/add-slot" element={<AdminSlot />} />
+            <Route path="/admin/update-slot" element={<UpdateSlot />} />
           </>
         )}
         <Route path="/404" element={<NotFound />} />

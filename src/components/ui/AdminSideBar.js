@@ -67,6 +67,16 @@ function AdminSideBar() {
               color: "#00d9a6",
               cursor: "pointer",
             }}
+            to="/admin/slot"
+          >
+            <div onClick={() => handleAdminMenuClose()}>Slots</div>
+          </NavLink>
+          <NavLink
+            style={{
+              textDecoration: "none",
+              color: "#00d9a6",
+              cursor: "pointer",
+            }}
             to="/"
           >
             <div onClick={() => handleAdminLogout()}>Logout</div>

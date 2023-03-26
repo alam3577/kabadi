@@ -5,8 +5,12 @@ import MainButton from 'components/ui/buttons/MainButton';
 import classes from './styles/Home.module.css';
 import MapIcon from '../assets/icons/map.png';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import DataContext from 'store/data/DataContext';
 
 function Home() {
+  const { allAvailableLocations } = useContext(DataContext);
+  const availableLocations = allAvailableLocations?.map(location => location?.name).join(' ');
   return (
     <div className={classes['home-container']}>
       <div className={classes['headline-container']}>
@@ -35,7 +39,7 @@ function Home() {
       <Card
         icon={MapIcon}
         heading="Service Areas"
-        text="We are serving across twin cities and major areas includes Hyderabad,Secunderabad, Madhapur, Gachibowli, Jubilee Hills, Begumpet, Banjara Hills, Punjagutta, Manikonda,etc."
+        text={`We are serving across twin cities and major areas includes ${ availableLocations }  ,etc.`}
         btnName="Call us now"
       />
     </div>

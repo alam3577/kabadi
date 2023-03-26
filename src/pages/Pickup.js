@@ -16,7 +16,6 @@ import Home from "./Home";
 function Pickup() {
   const { count } = useContext(UIContext);
   function getActiveComponent(count) {
-    console.log({ count });
     switch (count) {
       case 0:
         return <Name />;

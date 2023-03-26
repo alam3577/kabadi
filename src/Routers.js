@@ -4,28 +4,41 @@ import Locations from "pages/admin/locations/Locations";
 import Orders from "pages/admin/orders/Orders";
 import UpdateProduct from "pages/admin/products/UpdateProduct";
 import Home from "pages/Home";
-import Login from "pages/Login";
+import Login from "pages/auth/Login";
 import Pickup from "pages/Pickup";
 import Price from "pages/Price";
 import { Navigate, Route, Routes } from "react-router-dom";
 import NotFound from "pages/NotFound";
-import { isAuthenticated } from "utils/helper";
+import { isAuthenticated, isUser } from "utils/helper";
 import AdminSlot from "pages/admin/slots/AddSlot";
 import Slots from "pages/admin/slots/Slots";
 import UpdateSlot from "pages/admin/slots/UpdateSlot";
+import ForgotPassword from "pages/auth/ForgotPassword";
+import VerifyOtp from "pages/auth/VerifyOtp";
+import ResetPassword from "pages/auth/ResetPassword";
+import Signup from "pages/auth/Signup";
+import MyOrder from "pages/MyOrder";
+import GetAllUsers from "pages/admin/users/GetAllUsers";
 
 function Routers() {
-  console.log({ check: isAuthenticated() })
   return (
     <div>
       <Routes>
-        {/* <Route path='*' element={<NotFound />} /> */}
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Home />} />
         <Route path="/price" element={<Price />} />
-        <Route path="/book-pickup" element={<Pickup />} />
-        { isAuthenticated() && (
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        { isAuthenticated() && isUser() && isUser()?.role === 'user' && (
           <>
+            <Route path="/book-pickup" element={<Pickup />} />
+            <Route path="/my-order" element={<MyOrder />} />
+          </>
+        )}
+        {
+          isAuthenticated() && isUser() && isUser()?.role === 'admin' && <>
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/orders" element={<Orders />} />
             <Route path="/admin/locations" element={<Locations />} />
@@ -34,8 +47,9 @@ function Routers() {
             <Route path="/admin/slot" element={<Slots />} />
             <Route path="/admin/add-slot" element={<AdminSlot />} />
             <Route path="/admin/update-slot" element={<UpdateSlot />} />
+            <Route path="/admin/get-all-users" element={<GetAllUsers />} />
           </>
-        )}
+        }
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>

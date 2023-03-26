@@ -41,7 +41,6 @@ class ProductServices {
       const res = await axios.patch(`${this.path}/${id}`, payload, {
         headers: { Authorization: `Bearer ${isAuthenticated()}` }
       });
-      console.log({updated: res})
       return res;
     } catch (error) {
       return error;

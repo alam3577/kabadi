@@ -1,9 +1,6 @@
 .sidebar-items{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 1rem;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: 600;
 }

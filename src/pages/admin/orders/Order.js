@@ -9,7 +9,7 @@ import classes from "./Orders.module.css";
 
 const orderServices = new OrderServices();
 
-function Order({ id, count, name, phone, sellingType, location, time, date, address}) {
+function Order({ id, count, registeredName, name, registeredPhone, phone, sellingType, location, time, date, address}) {
   const { getAllOrders } = useContext(DataContext);
   const { setSpinner } = useContext(UIContext);
   const ISTDateFormat = moment(date)?._d
@@ -22,7 +22,6 @@ function Order({ id, count, name, phone, sellingType, location, time, date, addr
          toast.success('Oder is Deleted');
          getAllOrders();
        }
-       console.log({delRes: res});
     } catch (error) {
       toast.warn(error?.response?.data?.message);
     }finally{
@@ -30,13 +29,19 @@ function Order({ id, count, name, phone, sellingType, location, time, date, addr
     }
   }
   return (
-    <div class={classes["order-summary"]}>
+    <div className={classes["order-summary"]}>
         <h2>Order {count} </h2>
         <p>
-          <strong>Name:</strong> <span className="px-2">{name}</span>
+          <strong>Given Name:</strong> <span className="px-2">{name}</span> <br />
         </p>
         <p>
-          <strong>Phone:</strong> <span className="px-2">{phone}</span>
+          <strong>Registered Name:</strong> <span className="px-2">{registeredName}</span>
+        </p>
+        <p>
+          <strong>Given Phone:</strong> <span className="px-2">{phone}</span> <br />
+        </p>
+        <p>
+        <strong>Registered Phone:</strong> <span className="px-2">{registeredPhone}</span>
         </p>
         <p>
           <strong>Selling Type:</strong> <span className="px-2">{sellingType}</span>

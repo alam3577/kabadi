@@ -1,9 +1,16 @@
 .contact-container{
-    margin: 2rem;
-    margin-left: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact{
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 4rem;
 }

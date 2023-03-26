@@ -14,8 +14,6 @@ function DateSelection() {
   const {orderDetails, setOrderDetails} = useContext(DataContext);
   const { dataDate, selectedSlot } = orderDetails;
 
- console.log({orderDetails})
-
   const {setSpinner} = useContext(UIContext);
   const [slotId, setSlotId] = useState("");
   const [availableSlots, setAvailableSlots] = useState([]);
@@ -33,7 +31,6 @@ function DateSelection() {
     try {
      setSpinner(true);
      const res = await slotServices.getUSerSlots(date);
-     console.log({res, date});
      if (res.status === 'success') {
        setAvailableSlots(res?.data?.slots);
      }

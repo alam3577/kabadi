@@ -8,7 +8,6 @@ class SlotServices {
   async getSlots() {
      try {
       const { data } = await axios.get(`${this.path}/slot`);
-      console.log({data})
       return data;
      } catch (error) {
        return Promise.reject(error);

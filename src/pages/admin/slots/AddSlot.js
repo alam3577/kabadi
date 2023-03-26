@@ -45,9 +45,8 @@ function AdminSlot() {
       }
       setSpinner(false);
     } catch (error) {
-      console.log({ error });
+      toast.error(error?.response?.data?.message);;
     } finally {
-      console.log("INSIDE FINAL");
       setSlotFormData({
         startTime: "",
         endTime: "",

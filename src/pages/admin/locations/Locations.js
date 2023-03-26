@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { toast } from "react-toastify";
@@ -38,7 +38,6 @@ function Locations() {
     try {
       setSpinner(true);
       const res =  await locationServices.updateLocation(updateId, {name: location});
-      console.log({res})
       if (res?.status === 'success') {
         getAllLocations();
         toast.success('Location Updated')
@@ -54,7 +53,6 @@ function Locations() {
   }
 
   const handleDeleteClick = async(id) => {
-    console.log({id})
     try {
       setSpinner(true);
       const res = await locationServices.deleteLocation(id);

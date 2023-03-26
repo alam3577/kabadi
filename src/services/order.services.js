@@ -37,6 +37,17 @@ class OrderServices {
       return Promise.reject(error);
     }
   }
+
+  async getMyOrders() {
+    try {
+      const { data } = await axios.get(`${this.path}/get-my-order`, {
+        headers: { Authorization: `Bearer ${isAuthenticated()}` }
+      });
+      return data;
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  }
 }
 
 export default OrderServices;

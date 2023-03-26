@@ -1,5 +1,5 @@
 .container {
-  width: 80%;  
+  width: 88%;  
   margin: 0 auto;
   margin-top: 7rem;
   padding: 20px;
@@ -28,7 +28,6 @@ input[type="number"] {
   border: 1px solid #ccc;
   padding: 10px;
   font-size: 16px;
-  margin-bottom: 20px;
 }
 
 input[type="submit"] {

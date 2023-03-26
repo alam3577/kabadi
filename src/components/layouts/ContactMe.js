@@ -6,8 +6,8 @@ import classes from "./css/ContactMe.module.css";
 function ContactMe() {
   return (
     <div className={classes['contact-container']}>
-       <a style={{ textDecoration: 'none', color: '#000000' }} href="https://api.whatsapp.com/send?phone=9876543212"><img src={WhatsAppIcon} alt="whats app icon" srcset="" /></a>
-       <a style={{ textDecoration: 'none', color: '#000000' }} href="tel:9876543212"><img className={classes['contact-container--call-icon']} src={CallIcon} alt="whats app icon" srcset="" /></a>
+       <a style={{ textDecoration: 'none', color: '#000000' }} href="https://api.whatsapp.com/send?phone=9876543212"><img src={WhatsAppIcon} alt="whats app icon" srcSet="" /></a>
+       <a style={{ textDecoration: 'none', color: '#000000' }} href="tel:9876543212"><img className={classes['contact-container--call-icon']} src={CallIcon} alt="whats app icon" srcSet="" /></a>
     </div>
   )
 }

@@ -14,7 +14,6 @@ function UiState({ children }) {
   const decCount = () => {
     setCount(count - 1)
   }
-  console.log({ adminMenu });
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleAdminMenuShow = () => setAdminMenu(true);

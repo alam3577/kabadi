@@ -5,8 +5,6 @@ import DataContext from 'store/data/DataContext';
 
 function Price() {
   const { productData } = useContext(DataContext);
-  // eslint-disable-next-line no-console
-  console.log({ productData });
   return (
     <div className={classes['price-container']}>
       {productData?.map((elem) => {

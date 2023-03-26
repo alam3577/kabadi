@@ -1,0 +1,6 @@
+.otp-form, .reset-password-form {
+    margin: auto;
+    margin-top: 4rem;
+    padding: 20px;
+    max-width: 400px;
+  }

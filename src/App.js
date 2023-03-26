@@ -12,23 +12,23 @@ import UIContext from "store/ui/UiContext";
 import Contact from "components/layouts/Contact";
 import Spinner from "components/ui/Spinner";
 import AdminSideBar from "components/ui/AdminSideBar";
-import { isAuthenticated } from "utils/helper";
+import { isAuthenticated, isUser } from "utils/helper";
 import ContactMe from "components/layouts/ContactMe";
 
 function App() {
   const { spinner } = useContext(UIContext);
+  const { role } = isUser() || {};
   return (
     <div>
-      {!isAuthenticated() && (
+      { role !== 'admin' &&
         <>
           <Nav />
           <SideBar />
           <Routers />
           <Contact /> 
           <ContactMe />
-        </>
-      )}
-      {isAuthenticated() && (
+        </>}
+      {isAuthenticated() && role === 'admin' &&  (
         <>
           <AdminNav />
           <AdminSideBar />

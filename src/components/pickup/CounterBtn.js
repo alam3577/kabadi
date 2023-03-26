@@ -6,7 +6,6 @@ import UIContext from "store/ui/UiContext";
 import { toast } from 'react-toastify';
 
 function CounterBtn({check, errMessage}) {
-  console.log({check, errMessage});
   const {incCount, decCount} = useContext(UIContext);
   const handleContinueClick = () => {
    check && incCount()

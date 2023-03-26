@@ -1,5 +1,3 @@
-import axios from "axios";
-import Resizer from "react-image-file-resizer";
 import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -29,7 +27,6 @@ function AddProduct() {
     try {  
       setSpinner(true);
       const { data } = await productServices.addProduct(newProduct);
-      console.log({data});
       data.status === "success" && toast.success('Product Added To Database');
       getProductData();
       navigate('/admin/dashboard');
@@ -60,7 +57,6 @@ function AddProduct() {
   };
 
   const handleCloseImageClick = async (public_id) => {
-    console.log({public_id});
     try {
       setSpinner(true);
       const res = await cloudenaryServices.removeImage({public_id});

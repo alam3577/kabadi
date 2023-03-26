@@ -13,7 +13,6 @@ const slotServices = new SlotServices();
 function UpdateSlot() {
   const { setSpinner } = useContext(UIContext);
   const { getAllSlots, singleSlotData } = useContext(DataContext);
-  console.log({singleSlotData});
 
   const [slotFormData, setSlotFormData] = useState({
     startTime: singleSlotData?.startTime,
@@ -47,7 +46,7 @@ function UpdateSlot() {
       }
       setSpinner(false);
     } catch (error) {
-      console.log({ error });
+      toast.error(error?.response?.data?.message);
     } finally {
       setSlotFormData({});
       setSpinner(false);

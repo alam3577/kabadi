@@ -17,7 +17,6 @@ function GetAllUsers() {
       if (res?.status === "success") {
         setAllUsers(res?.users);
       }
-      console.log({ res });
     } catch (error) {
       toast.error(error?.response?.data?.message);
     } finally {

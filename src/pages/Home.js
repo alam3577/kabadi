@@ -7,30 +7,32 @@ import MapIcon from '../assets/icons/map.png';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import DataContext from 'store/data/DataContext';
+import UIContext from 'store/ui/UiContext';
 
 function Home() {
   const { allAvailableLocations } = useContext(DataContext);
+  const {handlePickUpClick} = useContext(UIContext);
   const availableLocations = allAvailableLocations?.map(location => location?.name).join(' ');
   return (
     <div className={classes['home-container']}>
       <div className={classes['headline-container']}>
-        <h2>
+        <p style={{ fontWeight: "600" }} className='fs-2'>
           <span className={classes['heading']}>Clean your space, Earn some</span> <br/>
-        </h2>
-        <h2>
+        </p>
+        <p style={{ fontWeight: "600" }} className='fs-2'>
           <span className={`${classes['heading-highlight']}`}>Cash</span>
-        </h2>
-        <h2>
+        </p>
+        <p style={{ fontWeight: "600" }} className='fs-2'>
           <span className={classes['heading']}>call your local </span>
-        </h2>
-        <h2>
+        </p>
+        <p style={{ fontWeight: "600" }} className='fs-2'>
           <span className={classes['heading-highlight']}>kabadiwallaa today!</span>
-        </h2>
+        </p>
       </div>
       <Breaker />
-      <NavLink style={{ textDecoration: 'none' }} to="/book-pickup">
+      <div onClick={() => handlePickUpClick()}>
         <MainButton name="Block Your PickUp" />
-      </NavLink>
+      </div>
       <Banner name="WE HAVE STANDARD PRICE" />
       <Breaker />
       <NavLink style={{ textDecoration: 'none' }} to="/price">

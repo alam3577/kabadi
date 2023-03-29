@@ -14,7 +14,7 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { setSpinner } = useContext(UIContext);
-  const { getProductData, getMyOrders } = useContext(DataContext);
+  const { getProductData, getMyOrders, getAllOrders } = useContext(DataContext);
 
   const handleForgotPassword = async () => {
     navigate('/forgot-password');
@@ -36,6 +36,7 @@ function LoginPage() {
         authService.authenticate(response?.token, response?.data?.user);
         toast.success('You are logged In');
         if (response?.data?.user?.role === 'admin') {
+          getAllOrders();
           navigate('/admin/dashboard');
         } else if (response?.data?.user?.role === 'user'){
           navigate('/');

@@ -1,6 +1,6 @@
 import "./App.css";
 import Nav from "components/layouts/Nav";
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Routers from "Routers";
 import SideBar from "components/ui/SideBar";
@@ -19,7 +19,8 @@ function App() {
   const { spinner } = useContext(UIContext);
   const { role } = isUser() || {};
   return (
-    <div>
+    <Fragment>
+      <div style={{ minHeight: "80% !important" }}>
       { role !== 'admin' &&
         <>
           <Nav />
@@ -35,6 +36,7 @@ function App() {
           <Routers />
         </>
       )}
+      </div>
       <Footer />
       <ToastContainer
         position="top-center"
@@ -51,7 +53,7 @@ function App() {
       {spinner && (
         <Spinner />
       )}
-    </div>
+    </Fragment>
   );
 }
 

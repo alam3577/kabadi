@@ -20,6 +20,11 @@
     margin-top: 20px;
     font-family: Arial, sans-serif;
   }
+
+  .pickup-title{
+    font-size: x-large;
+    font-weight: 600;
+  }
   
   .booking-summary h2 {
     font-size: 24px;

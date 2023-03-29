@@ -30,7 +30,7 @@ function Order({ id, count, registeredName, name, registeredPhone, phone, sellin
   }
   return (
     <div className={classes["order-summary"]}>
-        <h2>Order {count} </h2>
+        <p className='fs-2'>Order {count} </p>
         <p>
           <strong>Given Name:</strong> <span className="px-2">{name}</span> <br />
         </p>

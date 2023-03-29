@@ -1,6 +1,6 @@
 .contact-container{
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     margin-top: 4rem;
     display: flex;
     justify-content: center;
@@ -13,4 +13,16 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.contact-title{
+    color: #00d9a6;
+    font-weight: 600;
+}
+
+.mail-container img, .call-container img, .message-container img, .address-container img {
+    height: 20px;
+    height: 20px;
+    color: #fff;
+    filter: invert(74%) sepia(13%) saturate(2982%) hue-rotate(479deg) brightness(58%) contrast(417%);
 }

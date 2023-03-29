@@ -179,7 +179,7 @@ function DataState({ children }) {
       setSpinner(true);
       const res = await orderServices.getAllOrders(); 
       if (res?.status === 'success') {
-        setAllOrders(res?.data?.orders)
+        setAllOrders(res?.data?.orders);
       } 
     } catch (error) {
       toast.error(error?.response?.data?.message);

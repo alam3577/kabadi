@@ -8,12 +8,11 @@ function MyOrder() {
 
   return (
     <div className={classes["main-container"]}>
-      <h1>My Bookings</h1>
+      <p className="fs-1 fw-normal">My Bookings</p>
       {
         myOrders?.length ? myOrders?.map((order) => (
         <div key={order?._id} className={classes.container}>
           <div className={classes["booking-details"]}>
-            <h2>Booking Details</h2>
             <p>
               <strong>Name:</strong> {order?.name}
             </p>

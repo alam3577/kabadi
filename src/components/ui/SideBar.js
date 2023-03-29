@@ -12,17 +12,8 @@ import AuthService from 'services/auth.services';
 const authService = new AuthService();
 
 function SideBar() {
-  const {show, handleClose, setSpinner} = useContext(UIContext);
+  const {show, handleClose, setSpinner, handlePickUpClick} = useContext(UIContext);
   const navigate = useNavigate();
-  const handlePickUpClick = () => {
-   if (isAuthenticated() && isUser()) {
-      navigate('/book-pickup')
-   }else{
-      toast.warn('Please Login to Book Appointment');
-      navigate('/login')
-   } 
-   handleClose();
-  }
 
   const handleAdminLogout = async () => {
    setSpinner(true);

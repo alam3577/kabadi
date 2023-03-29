@@ -16,9 +16,8 @@ function Summery() {
   return (
     <div className={classes["main-container"]}>
       <div className={classes.container}>
-        <h1>Pick-up Booking Summary</h1>
+        <p className={classes['pickup-title']}>Pick-up Booking Summary</p>
         <div className={classes["booking-summary"]}>
-          <h2>Booking Details</h2>
           <p>
             <strong>Name:</strong> {name}
           </p>

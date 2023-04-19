@@ -31,7 +31,7 @@ class CloudenaryServices {
       });
       return res?.data;
     } catch (error) {
-      return error;
+      return Promise.reject(error);
     }
   }
 
@@ -42,7 +42,7 @@ class CloudenaryServices {
       });
       return res;
     } catch (error) {
-      return error;
+      return Promise.reject(error);
     }
   }
 }

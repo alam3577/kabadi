@@ -132,6 +132,7 @@ function DataState({ children }) {
        navigate('/admin/update-product');
        setSpinner(false);
      } catch (error) {
+       setSpinner(false);
        toast.error(error?.response?.data?.message);
      }
    }
@@ -196,8 +197,10 @@ function DataState({ children }) {
      if (res.status === 'success') {
       authServices.authenticate(res?.token, res?.data?.user);
       toast.success('You are logged In');
-      if (res?.data?.user?.role === 'admin') {
+      if (res?.data?.user?.role === 'super-admin') {
         navigate('/admin/dashboard');
+      } else if (res?.data?.user?.role === 'admin') {
+        navigate('/price');
       } else if (res?.data?.user?.role === 'user'){
         navigate('/');
       }

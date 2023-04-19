@@ -15,7 +15,7 @@ export const AdminNav = () => {
         <NavLink style={{ textDecoration: 'none' }} to="/">
           <img src={TrashIcon} alt="" srcSet="" />
         </NavLink>
-        <span className={classes['logo-text']}>Kabadiwallaa</span>
+        <span className={classes['logo-text']}>Kabadisalekaro</span>
       </div>
       <div className={classes['menu-icon']} onClick={() => handleAdminMenuShow()}>
           <img src={MenuIcon} alt="" srcSet="" />

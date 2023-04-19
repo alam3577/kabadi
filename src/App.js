@@ -14,14 +14,15 @@ import Spinner from "components/ui/Spinner";
 import AdminSideBar from "components/ui/AdminSideBar";
 import { isAuthenticated, isUser } from "utils/helper";
 import ContactMe from "components/layouts/ContactMe";
+import SuperAdminSideBar from "components/ui/SuperAdminBar";
 
 function App() {
   const { spinner } = useContext(UIContext);
   const { role } = isUser() || {};
   return (
     <Fragment>
-      <div style={{ minHeight: "80% !important" }}>
-      { role !== 'admin' &&
+      <div className="app-container" >
+      { !['admin', 'super-admin'].includes(role) &&
         <>
           <Nav />
           <SideBar />
@@ -29,6 +30,13 @@ function App() {
           <Contact /> 
           <ContactMe />
         </>}
+      {isAuthenticated() && role === 'super-admin' &&  (
+        <>
+          <AdminNav />
+          <SuperAdminSideBar />
+          <Routers />
+        </>
+      )}
       {isAuthenticated() && role === 'admin' &&  (
         <>
           <AdminNav />

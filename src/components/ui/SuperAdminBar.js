@@ -11,7 +11,7 @@ import UserIcon from "../../assets/icons/user.png"
 
 const authService = new AuthService();
 
-function AdminSideBar() {
+function SuperAdminSideBar() {
   const { adminMenu, handleAdminMenuClose, setSpinner } = useContext(UIContext);
   const navigate = useNavigate();
   const handleAdminLogout = async () => {
@@ -29,7 +29,7 @@ function AdminSideBar() {
   };
 
   const adminSidebarItem = [
-    { id: "553754775", url: "/price", name: "Dashboard" },
+    { id: "553754775", url: "/admin/dashboard", name: "Dashboard" },
     { id: "553754776", url: "/admin/orders", name: "Order" },
     { id: "553754777", url: "/admin/locations", name: "Locations" },
     { id: "553754778", url: "/admin/slot", name: "Slots" },
@@ -77,4 +77,4 @@ function AdminSideBar() {
   );
 }
 
-export default AdminSideBar;
+export default SuperAdminSideBar;

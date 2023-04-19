@@ -6,6 +6,7 @@ import OrderServices from 'services/order.services';
 import DataContext from 'store/data/DataContext';
 import UIContext from 'store/ui/UiContext';
 import classes from "./Orders.module.css";
+import { isAuthenticated, isUser } from 'utils/helper';
 
 const orderServices = new OrderServices();
 
@@ -58,7 +59,7 @@ function Order({ id, count, registeredName, name, registeredPhone, phone, sellin
         <p>
           <strong>Pick-up Address:</strong> <span className="px-2">{address}</span> 
         </p>
-        <Button onClick={() => handleOrderDeleteClick(id)} className="btn btn-danger">Delete</Button>
+        { isAuthenticated() && isUser()?.role === 'super-admin' && <Button onClick={() => handleOrderDeleteClick(id)} className="btn btn-danger">Delete</Button>}
       </div>
   )
 }

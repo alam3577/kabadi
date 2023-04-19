@@ -24,6 +24,10 @@
   color: white;
 }
 
+.app-container{
+  min-height: 80vh !important;
+}
+
 .App-link {
   color: #61dafb;
 }

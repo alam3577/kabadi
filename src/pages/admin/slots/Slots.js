@@ -68,7 +68,7 @@ function Slots() {
             </tr>
           </thead>
           <tbody>
-            {[...allAvailableSlots].reverse()?.map((slot, i) => (
+            {[...allAvailableSlots]?.map((slot, i) => (
               <tr key={slot?._id}>
                 <td>{i + 1}</td>
                 <td>

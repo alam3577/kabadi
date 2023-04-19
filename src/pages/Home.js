@@ -26,7 +26,7 @@ function Home() {
           <span className={classes['heading']}>call your local </span>
         </p>
         <p style={{ fontWeight: "600" }} className='fs-2'>
-          <span className={classes['heading-highlight']}>kabadiwallaa today!</span>
+          <span className={classes['heading-highlight']}>kabadisalekaro today!</span>
         </p>
       </div>
       <Breaker />

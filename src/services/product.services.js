@@ -10,7 +10,7 @@ class ProductServices {
       const res = await axios.get(`${this.path}`);
       return res;
     } catch (error) {
-      return error;
+      return Promise.reject(error);
     }
   }
 
@@ -43,7 +43,7 @@ class ProductServices {
       });
       return res;
     } catch (error) {
-      return error;
+      return Promise.reject(error);
     }
   }
 
@@ -54,7 +54,7 @@ class ProductServices {
       });
       return res;
     } catch (error) {
-      return error;
+      return Promise.reject(error);
     }
   }
 }

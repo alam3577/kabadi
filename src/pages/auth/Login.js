@@ -35,9 +35,12 @@ function LoginPage() {
       if (response?.status === 'success') {
         authService.authenticate(response?.token, response?.data?.user);
         toast.success('You are logged In');
-        if (response?.data?.user?.role === 'admin') {
+        if (response?.data?.user?.role === 'super-admin') {
           getAllOrders();
           navigate('/admin/dashboard');
+        } else if (response?.data?.user?.role === 'admin') {
+          getAllOrders();
+          navigate('/price');
         } else if (response?.data?.user?.role === 'user'){
           navigate('/');
           getMyOrders();

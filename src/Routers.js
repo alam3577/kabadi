@@ -39,6 +39,16 @@ function Routers() {
         )}
         {
           isAuthenticated() && isUser() && isUser()?.role === 'admin' && <>
+            <Route path="/admin/orders" element={<Orders />} />
+            <Route path="/admin/locations" element={<Locations />} />
+            <Route path="/admin/slot" element={<Slots />} />
+            <Route path="/admin/add-slot" element={<AdminSlot />} />
+            <Route path="/admin/update-slot" element={<UpdateSlot />} />
+            <Route path="/admin/get-all-users" element={<GetAllUsers />} />
+          </>
+        }
+         {
+          isAuthenticated() && isUser() && isUser()?.role === 'super-admin' && <>
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/orders" element={<Orders />} />
             <Route path="/admin/locations" element={<Locations />} />
